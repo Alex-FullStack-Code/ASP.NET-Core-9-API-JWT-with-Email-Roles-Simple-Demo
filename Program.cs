@@ -77,9 +77,10 @@ if (app.Environment.IsDevelopment())
     });
 }
 
+//Returns JWT with email, user roles.. From passed User here! Check JWT https://jwt.io/
 app.MapPost("/authenticate", (User user, AuthService authService)
     => authService.GenerateToken(user));
 
-app.MapGet("/signin", () => "User Authenticated Successfully!").RequireAuthorization("Admin");
+app.MapGet("/signin", () => "User Authenticated Successfully!").RequireAuthorization("admin");
 
 app.Run();
