@@ -81,6 +81,6 @@ if (app.Environment.IsDevelopment())
 app.MapPost("/authenticate", (User user, AuthService authService)
     => authService.GenerateToken(user));
 
-app.MapGet("/signin", () => "User Authenticated Successfully!").RequireAuthorization("admin");
+app.MapGet("/signin", () => "User Authenticated Successfully!").RequireAuthorization("Admin");
 
 app.Run();
